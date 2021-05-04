@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="ERP_FIN_OB_CMN_ARTIFACTS" xmlns="http://xmlns.oracle.com/dvm">
+<description/>
+<columns>
+<column name="INTERFACE_ID"/>
+<column name="INTEGRATION_NAME"/>
+<column name="GEOGRAPHY"/>
+<column name="ERP_OB_DVM_PATH"/>
+<column name="MFT_EXT_SOURCE_NAME"/>
+<column name="MFT_EXT_SOURCE_TYPE"/>
+<column name="MFT_INT_SOURCE_NAME"/>
+<column name="MFT_INT_SOURCE_TYPE"/>
+<column name="MFT_EVENT_TIMEOUT_MIN"/>
+</columns>
+<rows>
+<row>
+<cell>INT_FIN_239</cell>
+<cell>GL</cell>
+<cell>MY</cell>
+<cell>oramds:/apps/fin/my/dvm/ERP_FIN_OB_ARTIFACTS.dvm</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+</row>
+</rows>
+</dvm>

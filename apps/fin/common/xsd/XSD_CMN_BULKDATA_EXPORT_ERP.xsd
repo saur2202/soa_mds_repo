@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.CPLotus.com/schemas/common/ExportERPRequest" targetNamespace="http://xmlns.CPLotus.com/schemas/common/ExportERPRequest" elementFormDefault="qualified">
+<xsd:element name="BulkExportRequest">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Metadata" type="MetadataType"/>
+<xsd:element name="ExportBulkData" type="JobDetailsType" minOccurs="0"/>
+<xsd:element name="SubmitEssJob" type="SubmitEssJobType" minOccurs="0"/>
+<xsd:element name="Notification" type="NotificationType" minOccurs="0"/>
+<xsd:element name="FileDetails" type="FileDetailsType" minOccurs="0"/>
+<xsd:element name="GenericParameters" type="ParameterType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="BulkExportResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="ProcessId" type="xsd:string"/>
+<xsd:element name="Metadata" type="MetadataType"/>
+<xsd:element name="FileDetails" type="FileDetailsResponseType" minOccurs="0"/>
+<xsd:element name="FaultDetails" type="FaultDetailsType" minOccurs="0"/>
+<xsd:element name="GenericParameters" type="ParameterType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="FileDetailsType">
+<xsd:sequence>
+<xsd:element name="BIPFileName" type="xsd:string"/>
+<xsd:element name="BIPFileDirectory" type="xsd:string"/>
+<xsd:element name="BIPFileDecryptDirectory" type="xsd:string"/>
+<xsd:element name="FileDirectory" type="xsd:string" default="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FileDetailsResponseType">
+<xsd:sequence>
+<xsd:element name="FileName" type="xsd:string"/>
+<xsd:element name="FileDirectory" type="xsd:string" default="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FaultDetailsType">
+<xsd:sequence>
+<xsd:element name="FaultCode" type="xsd:string"/>
+<xsd:element name="FaultMessage" type="xsd:string" default="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MetadataType">
+<xsd:sequence>
+<xsd:element name="ParentProcessId" type="xsd:string"/>
+<xsd:element name="Interface_Id" type="xsd:string"/>
+<xsd:element name="SourceSystemName" type="xsd:string" minOccurs="0"/>
+<xsd:element name="TargetSystemName" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ParentProcessStartDateTime" type="xsd:string" minOccurs="0"/>
+<xsd:element name="SkipFileDownload" type="xsd:string"/>
+<xsd:element name="SkipJobSubmit" type="xsd:string"/>
+<xsd:element name="OldESSProcessId" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ParameterType">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="ParameterName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="ParameterValue" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ParameterValueType">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="ParameterValue" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="JobDetailsType">
+<xsd:sequence>
+<xsd:element name="IncludeMe" type="xsd:string"/>
+<xsd:element name="JobPackageName" type="xsd:string"/>
+<xsd:element name="JobDefinitionName" type="xsd:string"/>
+<xsd:element name="NotificationCode" type="xsd:integer"/>
+<xsd:element name="JobOptions" type="xsd:string"/>
+<xsd:element name="ParameterListCommaSeparated" type="xsd:string"/>
+<xsd:element name="CallbackURL" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SubmitEssJobType">
+<xsd:sequence>
+<xsd:element name="IncludeMe" type="xsd:string"/>
+<xsd:element name="JobPackageName" type="xsd:string"/>
+<xsd:element name="JobDefinitionName" type="xsd:string"/>
+<xsd:element name="JobParameterList" type="ParameterValueType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="NotificationType">
+<xsd:sequence>
+<xsd:element name="NotifyTo" type="xsd:string" minOccurs="1"/>
+<xsd:element name="Message" type="xsd:string"/>
+<xsd:element name="Template" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

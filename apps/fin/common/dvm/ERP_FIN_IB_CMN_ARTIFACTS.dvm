@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="ERP_FIN_IB_ARTIFACTS" xmlns="http://xmlns.oracle.com/dvm">
+<description/>
+<columns>
+<column name="INTERFACE_ID"/>
+<column name="INTEGRATION_NAME"/>
+<column name="GEOGRAPHY"/>
+<column name="ERP_IB_DVM_PATH"/>
+<column name="MFT_EXT_SOURCE_NAME"/>
+<column name="MFT_EXT_SOURCE_TYPE"/>
+<column name="MFT_INT_SOURCE_NAME"/>
+<column name="MFT_INT_SOURCE_TYPE"/>
+<column name="MFT_REJ_SOURCE_NAME"/>
+<column name="MFT_REJ_SOURCE_TYPE"/>
+<column name="MFT_EVENT_TIMEOUT_MIN"/>
+</columns>
+<rows>
+<row>
+<cell>INT_XYZ</cell>
+<cell>GL</cell>
+<cell>MY</cell>
+<cell>oramds:/apps/fin/my/dvm/ERP_FIN_IB_ARTIFACTS.dvm</cell>
+<cell>INT_FIN_233_GL_SOURCEXYZ</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_LOG_SOURCE</cell>
+<cell>FILE</cell>
+<cell>30</cell>
+</row>
+<row>
+<cell>INT_FIN_233</cell>
+<cell>GL</cell>
+<cell>MY</cell>
+<cell>oramds:/apps/fin/my/dvm/ERP_FIN_IB_ARTIFACTS.dvm</cell>
+<cell>INT_FIN_233_GL_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_LOG_SOURCE</cell>
+<cell>FILE</cell>
+<cell>30</cell>
+</row>
+<row>
+<cell>INT_FIN_238</cell>
+<cell>AR</cell>
+<cell>MY</cell>
+<cell>oramds:/apps/fin/my/dvm/ERP_FIN_IB_ARTIFACTS.dvm</cell>
+<cell>INT_FIN_238_AR_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_LOG_SOURCE</cell>
+<cell>FILE</cell>
+<cell>30</cell>
+</row>
+<row>
+<cell>INT_FIN_050</cell>
+<cell>GL</cell>
+<cell>TH</cell>
+<cell>oramds:/apps/fin/th/dvm/ERP_FIN_IB_ARTIFACTS.dvm</cell>
+<cell>INT_FIN_050_GL_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_LOG_SOURCE</cell>
+<cell>FILE</cell>
+<cell>30</cell>
+</row>
+<row>
+<cell>INT_FIN_049</cell>
+<cell>GL</cell>
+<cell>TH</cell>
+<cell>oramds:/apps/fin/th/dvm/ERP_FIN_IB_ARTIFACTS.dvm</cell>
+<cell>INT_FIN_049_GL_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_LOG_SOURCE</cell>
+<cell>FILE</cell>
+<cell>30</cell>
+</row>
+<row>
+<cell>INT_FIN_052</cell>
+<cell>GL</cell>
+<cell>TH</cell>
+<cell>oramds:/apps/fin/th/dvm/ERP_FIN_IB_ARTIFACTS.dvm</cell>
+<cell>INT_FIN_052_GL_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_SOURCE</cell>
+<cell>FILE</cell>
+<cell>INT_CMN_FIN_IB_PGPENC_LOG_SOURCE</cell>
+<cell>FILE</cell>
+<cell>30</cell>
+</row>
+</rows>
+</dvm>

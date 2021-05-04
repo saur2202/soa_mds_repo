@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CPLotus.com/schemas/common/notification">
+<xsd:element name="NotificationRequest">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="Status"/>
+<xsd:element name="Metadata">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:int" name="ParentProcessId" id="ParentProcessId"/>
+<xsd:element type="xsd:string" name="SourceSystemName"/>
+<xsd:element type="xsd:string" name="TargetSystemName"/>
+<xsd:element type="xsd:string" name="Interface_Id"/>
+<xsd:element type="xsd:dateTime" name="ParentProcessStartDateTime"/>
+<xsd:element type="xsd:dateTime" name="LastProcessEndDateTime"/>
+<xsd:element name="GenericParameters">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="GenericParameter" maxOccurs="unbounded" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="ParameterName"/>
+<xsd:element type="xsd:string" name="ParameterValue"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="NotificationDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="NotifyTo"/>
+<xsd:element type="xsd:string" name="EmailSubjectCode"/>
+<xsd:element type="xsd:string" name="NotificationTemplate"/>
+<xsd:element type="xsd:string" name="Comment"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SourceDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="IsIncluded"/>
+<xsd:element type="xsd:string" name="SourceFiles"/>
+<xsd:element type="xsd:string" name="SourcePath"/>
+<xsd:element type="xsd:string" name="SourcePGPEncrypted"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="TargetDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="IsIncluded"/>
+<xsd:element type="xsd:string" name="TargetFiles"/>
+<xsd:element type="xsd:string" name="TargetPath"/>
+<xsd:element type="xsd:string" name="TargetPGPEncrypted"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ImportDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="ImportDetails"/>
+<xsd:element type="xsd:string" name="ImportMessage"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ExportDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="ExportDetails"/>
+<xsd:element type="xsd:string" name="ExportMessage"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ArchiveDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="IsIncluded"/>
+<xsd:element type="xsd:string" name="ArchivalFiles" maxOccurs="unbounded" minOccurs="0"/>
+<xsd:element type="xsd:string" name="ArchivalPath"/>
+<xsd:element type="xsd:string" name="ArchivePGPEncrypted"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="RejectionDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="IsIncluded"/>
+<xsd:element type="xsd:string" name="RejectedFiles" maxOccurs="unbounded" minOccurs="0"/>
+<xsd:element type="xsd:string" name="RejectedFilePath"/>
+<xsd:element type="xsd:string" name="RejectionPGPEncrypted"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ReconciliationRecord" maxOccurs="unbounded" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="TargetFileName"/>
+<xsd:element type="xsd:string" name="SourceFileTotalRecords"/>
+<xsd:element type="xsd:string" name="SourceFileEligibleRecords"/>
+<xsd:element type="xsd:string" name="ExpectedTransformedRecords"/>
+<xsd:element type="xsd:string" name="SOARejectedRecords"/>
+<xsd:element type="xsd:string" name="ActualTransformedRecords"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="InterfaceSpecificMessage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="IsIncluded"/>
+<xsd:element type="xsd:string" name="Message"/>
+<xsd:element type="xsd:string" name="MessageType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ErrorDetails">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:string" name="IsIncluded"/>
+<xsd:element type="xsd:string" name="ErrorCode"/>
+<xsd:element type="xsd:string" name="ErrorType"/>
+<xsd:element type="xsd:string" name="ErrorMessage"/>
+<xsd:element type="xsd:string" name="ErroredService"/>
+<xsd:element type="xsd:string" name="Comments"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="NotificationResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

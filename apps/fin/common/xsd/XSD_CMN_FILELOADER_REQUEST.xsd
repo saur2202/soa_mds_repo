@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.CPLotus.com/schemas/common/FileTransformation" targetNamespace="http://www.CPLotus.com/schemas/common/FileTransformation" elementFormDefault="qualified">
+<xsd:element name="FileTransformationRequest">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Metadata" type="MetadataType"/>
+<xsd:element name="FileDetails" type="FileDetailsType"/>
+<xsd:element name="DBDetails" type="DBDetailsType"/>
+<xsd:element name="Notification" type="NotificationType"/>
+<xsd:element name="GenericParameters" type="ParameterType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="FileTransformationResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Metadata" type="MetadataType"/>
+<xsd:element name="TargetFileDetails" type="TargetFileDetailsType"/>
+<xsd:element name="ReconciliationRecord" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TargetFile" type="xsd:string"/>
+<xsd:element name="RecordCount" type="ReconciliationRecordType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="GenericParameters" type="ParameterType" maxOccurs="unbounded"/>
+<xsd:element name="StatusDetails" type="StatusType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="MetadataType">
+<xsd:sequence>
+<xsd:element name="ParentProcessId" type="xsd:string"/>
+<xsd:element name="Interface_Id" type="xsd:string"/>
+<xsd:element name="IntegrationName" type="xsd:string"/>
+<xsd:element name="SourceSystemName" type="xsd:string"/>
+<xsd:element name="TargetSystemName" type="xsd:string"/>
+<xsd:element name="ParentProcessStartDateTime" type="xsd:string"/>
+<xsd:element name="effective_run_date" type="xsd:dateTime"/>
+<xsd:element name="last_modified_date" type="xsd:dateTime"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ParameterType">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="ParameterName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="ParameterValue" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ReconciliationRecordType">
+<xsd:sequence>
+<xsd:element name="SourceFileTotalRecords" type="xsd:integer" default="0"/>
+<xsd:element name="FileExpectedRecords" type="xsd:integer" default="0"/>
+<xsd:element name="FileRejectedRecords" type="xsd:integer" default="0"/>
+<xsd:element name="FileActualRecords" type="xsd:integer" default="0"/>
+<xsd:element name="Attribute_1" type="xsd:string"/>
+<xsd:element name="Attribute_2" type="xsd:string"/>
+<xsd:element name="Attribute_3" type="xsd:string"/>
+<xsd:element name="Attribute_4" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FileDetailsType">
+<xsd:sequence>
+<xsd:element name="SourceFileName" type="xsd:string"/>
+<xsd:element name="SourceFileDirectory" type="xsd:string"/>
+<xsd:element name="TargetFileDirectory" type="xsd:string"/>
+<xsd:element name="ZipTargetFiles" type="xsd:string"/>
+<xsd:element name="TargetFileZipDirectory" type="xsd:string"/>
+<xsd:element name="TargetFileZipFileName" type="xsd:string"/>
+<xsd:element name="RejectedFileDirectory" type="xsd:string"/>
+<xsd:element name="RejectedFileZipDirectory" type="xsd:string"/>
+<xsd:element name="RejectedFileZipFileName" type="xsd:string"/>
+<xsd:element name="HasHeader" type="xsd:boolean"/>
+<xsd:element name="ChunkReadRowNumber" type="xsd:string"/>
+<xsd:element name="ChunkReadColumnNumber" type="xsd:string"/>
+<xsd:element name="TargetFileName">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Name" type="xsd:string" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Parameter" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TargetFileDetailsType">
+<xsd:sequence>
+<xsd:element name="TargetFileDirectory" type="xsd:string"/>
+<xsd:element name="TargetFileZipFileName" type="xsd:string"/>
+<xsd:element name="TargetRejectedFileDirectory" type="xsd:string"/>
+<xsd:element name="RejectedFileZipFileName" type="xsd:string"/>
+<xsd:element name="TargetFileName">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Name" type="xsd:string" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="RejectedFileName">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Name" type="xsd:string" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Parameter" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="DBDetailsType">
+<xsd:sequence>
+<xsd:element name="SourceTableName" type="xsd:string"/>
+<xsd:element name="DBReadBatchSize" type="xsd:integer" default="0"/>
+<xsd:element name="TransformationProcedure" type="TransformProcedureType"/>
+<xsd:element name="GetCountProcedure" type="GetCountProcedureType"/>
+<xsd:element name="TargetTableName" type="xsd:string"/>
+<xsd:element name="Attribute_1" type="xsd:string"/>
+<xsd:element name="Attribute_2" type="xsd:string"/>
+<xsd:element name="Attribute_3" type="xsd:string"/>
+<xsd:element name="Parameter" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TransformProcedureType">
+<xsd:sequence>
+<xsd:element name="TransformationProcedureName" type="xsd:string"/>
+<xsd:element name="Attribute_1" type="xsd:string"/>
+<xsd:element name="Attribute_2" type="xsd:string"/>
+<xsd:element name="Attribute_3" type="xsd:string"/>
+<xsd:element name="Parameter" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetCountProcedureType">
+<xsd:sequence>
+<xsd:element name="GetCountProcedureName" type="xsd:string"/>
+<xsd:element name="Attribute_1" type="xsd:string"/>
+<xsd:element name="Attribute_2" type="xsd:string"/>
+<xsd:element name="Attribute_3" type="xsd:string"/>
+<xsd:element name="Parameter" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="NotificationType">
+<xsd:sequence>
+<xsd:element name="SkipNotification" minOccurs="0" default="YES">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="YES"/>
+<xsd:enumeration value="NO"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="NotifyTo" type="xsd:string" minOccurs="1"/>
+<xsd:element name="Message" type="xsd:string"/>
+<xsd:element name="Template" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="StatusType">
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string" minOccurs="1"/>
+<xsd:element name="ErrorCode" type="xsd:string"/>
+<xsd:element name="ErrorMessage" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

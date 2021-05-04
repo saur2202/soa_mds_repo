@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.cplotus/schema/common/inbound/fileprocess" targetNamespace="http://www.cplotus/schema/common/inbound/fileprocess" elementFormDefault="qualified">
+<xsd:element name="CommonInboundFileRequest">
+<xsd:annotation>
+<xsd:documentation>A sample element</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="InterfaceID" type="xsd:string"/>
+<xsd:element name="FileName" type="xsd:string"/>
+<xsd:element name="ErpIBCmnDvmPath" type="xsd:string"/>
+<xsd:element name="SchedulerDate" type="xsd:string"/>
+<xsd:element name="Parameter" minOccurs="0" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="CommonInboundFileResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="InterfaceID" type="xsd:string"/>
+<xsd:element name="InstanceID" type="xsd:string"/>
+<xsd:element name="Message" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="ParameterType">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="ParameterName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="ParameterValue" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CPLotus.com/schemas/common/CmnErrorHandler" elementFormDefault="qualified">
+<xs:element name="CmnFaultDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="Interface_Id"/>
+<xs:element type="xs:string" name="Status"/>
+<xs:element type="xs:string" name="ParentId"/>
+<xs:element type="xs:string" name="FaultedFlowID"/>
+<xs:element type="xs:string" name="IntegrationName"/>
+<xs:element type="xs:string" name="EmailTemplate"/>
+<xs:element type="xs:string" name="IsNotify"/>
+<xs:element type="xs:string" name="OverrideNotificationRecipient"/>
+<xs:element type="xs:string" name="Comments"/>
+<xs:element type="xs:string" name="FaultCode"/>
+<xs:element type="xs:string" name="FaultDetail"/>
+<xs:element type="xs:string" name="FaultReason"/>
+<xs:element type="xs:string" name="ParentProcessStartDateTime"/>
+<xs:element type="xs:string" name="SourceSystem"/>
+<xs:element type="xs:string" name="TargetSystem"/>
+<xs:element name="SourceDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="IsIncluded"/>
+<xs:element type="xs:string" name="PGPEncrypted"/>
+<xs:element type="xs:string" name="SourceFiles"/>
+<xs:element type="xs:string" name="SourcePath"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="TargetDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="IsIncluded"/>
+<xs:element type="xs:string" name="PGPEncrypted"/>
+<xs:element type="xs:string" name="TargetFiles"/>
+<xs:element type="xs:string" name="TargetPath"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ExtractDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="ExtractFiles"/>
+<xs:element type="xs:string" name="ExtractInstanceId"/>
+<xs:element type="xs:string" name="ExtractName"/>
+<xs:element type="xs:string" name="IsIncluded"/>
+<xs:element type="xs:string" name="SkipExtractSubABCt"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ArchiveDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="ArchivalFiles"/>
+<xs:element type="xs:string" name="ArchivalPath"/>
+<xs:element type="xs:string" name="IsIncluded"/>
+<xs:element type="xs:string" name="PGPEncrypted"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RejectionDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="IsIncluded"/>
+<xs:element type="xs:string" name="PGPEncrypted"/>
+<xs:element type="xs:string" name="RejectedFilePath"/>
+<xs:element type="xs:string" name="RejectedFiles"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ImportLoadDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="ImportLoadType"/>
+<xs:element type="xs:string" name="IsIncluded"/>
+<xs:element type="xs:string" name="UCMContentName"/>
+<xs:element name="ImportReconciliationRecord">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:byte" name="FailedRecords"/>
+<xs:element type="xs:string" name="Status"/>
+<xs:element type="xs:byte" name="SuccessRecords"/>
+<xs:element type="xs:byte" name="TotalRecords"/>
+<xs:element type="xs:byte" name="UnprocessedRecords"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ImportLoadReconciliationRecord">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:byte" name="FailedRecords"/>
+<xs:element type="xs:string" name="Status"/>
+<xs:element type="xs:byte" name="SuccessRecords"/>
+<xs:element type="xs:byte" name="TotalRecords"/>
+<xs:element type="xs:byte" name="UnprocessedRecords"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ReconciliationRecord" maxOccurs="unbounded" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="TargetFileName"/>
+<xs:element type="xs:string" name="ActualTransformedRecords"/>
+<xs:element type="xs:string" name="ExpectedTransformedRecords"/>
+<xs:element type="xs:string" name="SOARejectedRecords"/>
+<xs:element type="xs:string" name="SourceFileEligibleRecords"/>
+<xs:element type="xs:string" name="SourceFileTotalRecords"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="InterfaceSpecificMessage">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="IsIncluded"/>
+<xs:element type="xs:string" name="Message"/>
+<xs:element type="xs:string" name="MessageType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="ERP_FIN_OB_ARTIFACTS" xmlns="http://xmlns.oracle.com/dvm">
+<description/>
+<columns>
+<column name="INTERFACE_ID"/>
+<column name="INTEGRATION_NAME"/>
+<column name="SOURCE_SYSTEM"/>
+<column name="TARGET_SYSTEM"/>
+<column name="BIP_FILE_DIR"/>
+<column name="SOURCE_FILE_DEC_DIR"/>
+<column name="SOURCE_SHARED_FILE_DIR"/>
+<column name="TARGET_FILE_DIR"/>
+<column name="TARGET_FILE_ENC_DIR"/>
+<column name="TARGET_FILE_TRNSFRM_DIR"/>
+<column name="TARGET_FILE_REJ_TRNSFRM_DIR"/>
+<column name="TARGET_FILENAME1"/>
+<column name="TARGET_FILENAME2"/>
+<column name="TARGET_FILENAME3"/>
+<column name="TARGET_ZIPFILENAME"/>
+<column name="REJECT_ZIPFILENAME"/>
+<column name="ARCHIVE_DIR"/>
+<column name="REJECTED_RECORDS_LOG_DIR"/>
+<column name="ERP_LOAD_TYPE"/>
+<column name="JOB_NAME"/>
+<column name="JOB_PATH"/>
+<column name="JOB_PARAMETER_COMMA_SEPARATED"/>
+<column name="JOB_OPTIONS_COMMA_SEPARATED"/>
+<column name="ERP_NOTIFICATION_CODE"/>
+<column name="SOURCE_FILE_CHUNK_LIMIT"/>
+<column name="PROCESS_TIMEOUT_HRS"/>
+<column name="SKIP_REJECTED_RECORD_LOG"/>
+<column name="SKIP_FILE_DOWNLOAD"/>
+<column name="SKIP_PURGING"/>
+<column name="SKIP_IMPORT_LOAD"/>
+<column name="BIP_REPORT1"/>
+<column name="BIP_REPORT2"/>
+<column name="BIP_REPORT3"/>
+<column name="SKIP_NOTIFICATION"/>
+<column name="NOTIFICATION_TEMPLATE"/>
+<column name="NOTIFY_TO"/>
+<column name="SOURCE_FILE_HASHEADER"/>
+<column name="DBCS_CHUNK_LIMIT"/>
+<column name="SOURCE_TABLENAME"/>
+<column name="TARGET_TABLENAME"/>
+<column name="TRANSFORMATION_PROCEDURE_NAME"/>
+</columns>
+<rows>
+<row>
+<cell>INT_FIN_239</cell>
+<cell>GL</cell>
+<cell>ERP</cell>
+<cell>MISO</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/BIP/INT_FIN_239</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/INT_FIN_239/IN_DEC</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/INT_FIN_239/IN</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT_ENC</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/INT_FIN_239/TRANSFORM/OUT</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/INT_FIN_239/TRANSFORM/LOG</cell>
+<cell>INT_FIN_233_FBDI_GL_@ParentID@_@DATETIME@.zip</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>/SharedStorage/CP/SOA/FIN/INT_FIN_239/ARCHIVE</cell>
+<cell>/SharedStorage/CP/SOA/FIN/INT_FIN_239/LOG</cell>
+<cell>NA</cell>
+<cell>XX_AR_INV_OUT</cell>
+<cell>/oracle/apps/ess/custom/SSINT/Receivables/</cell>
+<cell>#NULL</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>200</cell>
+<cell>2</cell>
+<cell>NA</cell>
+<cell>YES</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NO</cell>
+<cell>NA</cell>
+<cell>sureshbabu.ganesan@accenture.com</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+</row>
+</rows>
+</dvm>

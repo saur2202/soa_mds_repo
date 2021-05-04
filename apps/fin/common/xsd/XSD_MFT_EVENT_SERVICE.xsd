@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.CPLotus.com/schemas/common/mftevent" targetNamespace="http://www.CPLotus.com/schemas/common/mftevent" elementFormDefault="qualified">
+<xsd:element name="MftEventServiceRequest" type="MftEventServiceRequestType"/>
+<xsd:complexType name="MftEventServiceRequestType">
+<xsd:sequence>
+<xsd:element name="Interface_Id" minOccurs="1" type="xsd:string"/>
+<xsd:element name="IntegrationName" minOccurs="0" type="xsd:string"/>
+<xsd:element name="MftSourceName" minOccurs="1" type="xsd:string"/>
+<xsd:element name="MftSourceType" minOccurs="0" type="xsd:string"/>
+<xsd:element name="MftTotalFilesToBeProcessed" minOccurs="1" type="xsd:string"/>
+<xsd:element name="MftTEventTimeOutMin" minOccurs="1" type="xsd:string"/>
+<xsd:element name="MftEventParams" minOccurs="0" type="MftEventParamsType"/>
+<xsd:element name="Metadata" type="MetadataType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MftEventParamsType">
+<xsd:sequence>
+<xsd:element name="MftEventParams" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParamName" type="xsd:string"/>
+<xsd:element name="ParamValue" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MetadataType">
+<xsd:sequence>
+<xsd:element name="ParentProcessId" type="xsd:string"/>
+<xsd:element name="SourceSystemName" type="xsd:string"/>
+<xsd:element name="TargetSystemName" type="xsd:string"/>
+<xsd:element name="ParentProcessStartDateTime" type="xsd:string"/>
+<xsd:element name="effective_run_date" type="xsd:dateTime"/>
+<xsd:element name="last_modified_date" type="xsd:dateTime"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="MftEventServiceRespone" type="MftEventServiceResponseType"/>
+<xsd:complexType name="MftEventServiceResponseType">
+<xsd:sequence>
+<xsd:element name="Interface_Id" minOccurs="1" type="xsd:string"/>
+<xsd:element name="IntegrationName" minOccurs="0" type="xsd:string"/>
+<xsd:element name="Status" minOccurs="1" type="xsd:string"/>
+<xsd:element name="ErrorDetails" minOccurs="0" type="xsd:string"/>
+<xsd:element name="MftEventParams" minOccurs="0" type="MftEventParamsType"/>
+<xsd:element name="ExecutionTime" minOccurs="0" type="xsd:string"/>
+<xsd:element name="Metadata" type="MetadataType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

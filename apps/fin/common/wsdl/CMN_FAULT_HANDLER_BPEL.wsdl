@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="CMN_FAULT_HANDLER_BPEL" targetNamespace="http://xmlns.oracle.com/SOA_ERP/CMN_FAULT_HANDLER/CMN_FAULT_HANDLER_BPEL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://xmlns.oracle.com/SOA_ERP/CMN_FAULT_HANDLER/CMN_FAULT_HANDLER_BPEL" xmlns:ns1="http://www.CPLotus.com/schemas/common/CmnErrorHandler" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+<wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://www.CPLotus.com/schemas/common/CmnErrorHandler" schemaLocation="oramds:/apps/fin/common/xsd/XSD_CMN_FAULT_HANDLER.xsd"/>
+</schema>
+</wsdl:types>
+<wsdl:message name="CMN_FAULT_HANDLER_BPELRequestMessage">
+<wsdl:part name="payload" element="ns1:CmnFaultDetails"/>
+</wsdl:message>
+<wsdl:message name="CMN_FAULT_HANDLER_BPELResponseMessage">
+<wsdl:part name="payload" element="ns1:CmnFaultDetails"/>
+</wsdl:message>
+<wsdl:portType name="CMN_FAULT_HANDLER_BPEL">
+<wsdl:operation name="CmnErrorHandlerRequest">
+<wsdl:input message="client:CMN_FAULT_HANDLER_BPELRequestMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="CMN_FAULT_HANDLER_BPELCallback">
+<wsdl:operation name="CmnErrorHandlerResponse">
+<wsdl:input message="client:CMN_FAULT_HANDLER_BPELResponseMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<plnk:partnerLinkType name="CMN_FAULT_HANDLER_BPEL">
+<plnk:role name="CMN_FAULT_HANDLER_BPELProvider" portType="client:CMN_FAULT_HANDLER_BPEL"/>
+<plnk:role name="CMN_FAULT_HANDLER_BPELRequester" portType="client:CMN_FAULT_HANDLER_BPELCallback"/>
+</plnk:partnerLinkType>
+</wsdl:definitions>

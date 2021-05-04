@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="cmn_inbound_file_proces_soapservice" targetNamespace="http://oracle.com/sca/soapservice/CMN/CMN_INBOUND_FILE_PROCESS/cmn_inbound_file_proces_soapservice" xmlns:tns="http://oracle.com/sca/soapservice/CMN/CMN_INBOUND_FILE_PROCESS/cmn_inbound_file_proces_soapservice" xmlns:inp1="http://www.cplotus/schema/common/inbound/fileprocess" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:import namespace="http://www.cplotus/schema/common/inbound/fileprocess" schemaLocation="oramds:/apps/fin/common/xsd/XSD_CMN_INBOUND_FILE_PROCESS_BPEL.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="requestMessage">
+<wsdl:part name="part" element="inp1:CommonInboundFileRequest"/>
+</wsdl:message>
+<wsdl:message name="callbackMessage">
+<wsdl:part name="part" element="inp1:CommonInboundFileResponse"/>
+</wsdl:message>
+<wsdl:portType name="executeCmnInboundFileProcess_ptt">
+<wsdl:operation name="executeCmnInboundFileProcess">
+<wsdl:input message="tns:requestMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="executeCmnInboundFileProcesscallback_ptt">
+<wsdl:operation name="callback">
+<wsdl:input message="tns:callbackMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+</wsdl:definitions>

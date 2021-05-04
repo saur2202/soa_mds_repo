@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="ERP_FIN_CMN_ARTIFACTS" xmlns="http://xmlns.oracle.com/dvm">
+<description/>
+<columns>
+<column name="KEY"/>
+<column name="VALUE"/>
+</columns>
+<rows>
+<row>
+<cell>ERP_CALLBACK_URL</cell>
+<cell>https://dev-fmwp-th.lotuss.com/soa-infra/services/POC/CMN_FIN_CALLBACK_ERP/erpcallback_client_ep</cell>
+</row>
+<row>
+<cell>ESS_TRACKER_WAIT_TIME</cell>
+<cell>2</cell>
+</row>
+<row>
+<cell>ESS_TRACKER_EXIT_COUNT</cell>
+<cell>10</cell>
+</row>
+<row>
+<cell>CALLBACK_TRACKER_WAIT_TIME</cell>
+<cell>2</cell>
+</row>
+<row>
+<cell>CALLBACK_TRACKER_EXIT_COUNT</cell>
+<cell>10</cell>
+</row>
+</rows>
+</dvm>

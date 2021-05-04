@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="ERP_FIN_IB_ARTIFACTS" xmlns="http://xmlns.oracle.com/dvm">
+<description/>
+<columns>
+<column name="INTERFACE_ID"/>
+<column name="INTEGRATION_NAME"/>
+<column name="SOURCE_SYSTEM"/>
+<column name="TARGET_SYSTEM"/>
+<column name="SOURCE_SHARED_FILE_DIR"/>
+<column name="TARGET_FILE_DIR"/>
+<column name="REJ_FILE_DIR"/>
+<column name="TARGET_FILE_ENC_DIR"/>
+<column name="TARGET_FILE_TRNSFRM_DIR"/>
+<column name="TARGET_FILE_REJ_TRNSFRM_DIR"/>
+<column name="TARGET_FILENAME1"/>
+<column name="TARGET_FILENAME2"/>
+<column name="TARGET_FILENAME3"/>
+<column name="ZIP_TARGET_FILES"/>
+<column name="TARGET_ZIPFILENAME"/>
+<column name="REJECT_ZIPFILENAME"/>
+<column name="ARCHIVE_DIR"/>
+<column name="REJECTED_RECORDS_LOG_DIR"/>
+<column name="ERP_LOAD_TYPE"/>
+<column name="ERP_LOAD_PROCESS"/>
+<column name="ERP_CALLBACK_URL"/>
+<column name="JOB_NAME"/>
+<column name="JOB_PATH"/>
+<column name="JOB_PARAMETER_COMMA_SEPARATED"/>
+<column name="JOB_OPTIONS_COMMA_SEPARATED"/>
+<column name="ERP_NOTIFICATION_CODE"/>
+<column name="SOURCE_FILE_CHUNK_LIMIT"/>
+<column name="PROCESS_TIMEOUT_HRS"/>
+<column name="SKIP_REJECTED_RECORD_LOG"/>
+<column name="SKIP_PURGING"/>
+<column name="SKIP_IMPORT_LOAD"/>
+<column name="BIP_REPORT1"/>
+<column name="BIP_REPORT2"/>
+<column name="BIP_REPORT3"/>
+<column name="SKIP_NOTIFICATION"/>
+<column name="NOTIFICATION_TEMPLATE"/>
+<column name="NOTIFY_TO"/>
+<column name="SOURCE_FILE_HASHEADER"/>
+<column name="DBCS_CHUNK_LIMIT"/>
+<column name="SOURCE_TABLENAME"/>
+<column name="TARGET_TABLENAME"/>
+<column name="TRANSFORMATION_PROCEDURE_NAME"/>
+</columns>
+<rows>
+<row>
+<cell>INT_FIN_049</cell>
+<cell>GL</cell>
+<cell>RMS</cell>
+<cell>ERP</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/IN/INT_FIN_049</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT/INT_FIN_049</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/LOG/INT_FIN_049</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT_ENC/INT_FIN_049</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/TRANSFORM/INT_FIN_049/OUT</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/TRANSFORM/INT_FIN_049/LOG</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>YES</cell>
+<cell>RMS_GL_@ParentID@_@DATETIME@.zip</cell>
+<cell>RMS_GL_REJECTED_@ParentID@_@DATETIME@.zip</cell>
+<cell>/SharedStorage/CP/SOA/FIN/INT_FIN_049/ARCHIVE</cell>
+<cell>/SharedStorage/CP/SOA/FIN/INT_FIN_049/LOG</cell>
+<cell>FBDI</cell>
+<cell>FULL</cell>
+<cell>https://dev-fmwp-th.lotuss.com/soa-infra/services/POC/CMN_FIN_CALLBACK_ERP/erpcallback_client_ep</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>200</cell>
+<cell>2</cell>
+<cell>NO</cell>
+<cell>YES</cell>
+<cell>YES</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NO</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>YES</cell>
+<cell>1000</cell>
+<cell>INT_FIN_049_IB_SOURCE_STG_TBL</cell>
+<cell>INT_FIN_049_IB_TARGET_STG_TBL</cell>
+<cell>INT_FIN_049_IB_XFORM_PROC</cell>
+</row>
+<row>
+<cell>INT_FIN_050</cell>
+<cell>GL</cell>
+<cell>RMS</cell>
+<cell>ERP</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/IN/INT_FIN_050</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT/INT_FIN_050</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/LOG/INT_FIN_050</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT_ENC/INT_FIN_050</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/TRANSFORM/INT_FIN_050/OUT</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/TRANSFORM/INT_FIN_050/LOG</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>YES</cell>
+<cell>RMS_GL_@ParentID@_@DATETIME@.zip</cell>
+<cell>RMS_GL_REJECTED_@ParentID@_@DATETIME@.zip</cell>
+<cell>/SharedStorage/CP/SOA/FIN/ARCHIVE/INT_FIN_050</cell>
+<cell>/SharedStorage/CP/SOA/FIN/LOG/INT_FIN_050</cell>
+<cell>FBDI</cell>
+<cell>FULL</cell>
+<cell>https://dev-fmwp-th.lotuss.com/soa-infra/services/POC/CMN_FIN_CALLBACK_ERP/erpcallback_client_ep</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>200</cell>
+<cell>2</cell>
+<cell>NO</cell>
+<cell>YES</cell>
+<cell>YES</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NO</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>YES</cell>
+<cell>1000</cell>
+<cell>INT_FIN_050_IB_SOURCE_STG_TBL</cell>
+<cell>INT_FIN_050_IB_TARGET_STG_TBL</cell>
+<cell>INT_FIN_050_IB_XFORM_PROC</cell>
+</row>
+<row>
+<cell>INT_FIN_052</cell>
+<cell>GL</cell>
+<cell>RESA</cell>
+<cell>ERP</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/IN/INT_FIN_052</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT/INT_FIN_052</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/LOG/INT_FIN_052</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/OUT_ENC/INT_FIN_052</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/TRANSFORM/INT_FIN_052/OUT</cell>
+<cell>/SharedStorage/SOA/INTERNAL/FIN/TRANSFORM/INT_FIN_052/LOG</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>YES</cell>
+<cell>ReSA_GL_@ParentID@.zip</cell>
+<cell>ReSA_GL_REJECTED_@ParentID@_@DATETIME@.zip</cell>
+<cell>/SharedStorage/CP/SOA/FIN/ARCHIVE/INT_FIN_052</cell>
+<cell>/SharedStorage/CP/SOA/FIN/LOG/INT_FIN_052</cell>
+<cell>FBDI</cell>
+<cell>FULL</cell>
+<cell>https://dev-fmwp-th.lotuss.com/soa-infra/services/POC/CMN_FIN_CALLBACK_ERP/erpcallback_client_ep</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>200</cell>
+<cell>2</cell>
+<cell>NO</cell>
+<cell>YES</cell>
+<cell>YES</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>NO</cell>
+<cell>NA</cell>
+<cell>NA</cell>
+<cell>YES</cell>
+<cell>1000</cell>
+<cell>INT_FIN_052_IB_SOURCE_STG_TBL</cell>
+<cell>INT_FIN_052_IB_TARGET_STG_TBL</cell>
+<cell>INT_FIN_052_IB_XFORM_PROC</cell>
+</row>
+</rows>
+</dvm>

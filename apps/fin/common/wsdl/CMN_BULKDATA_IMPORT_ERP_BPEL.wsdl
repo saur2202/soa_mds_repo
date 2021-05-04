@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESS" targetNamespace="http://xmlns.oracle.com/CMN_BULKDATA_IMPORT_ERPApp/CMN_BULKDATA_IMPORT_ERP/CMN_BULKDATA_IMPORT_ERP_BPELPROCESS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://xmlns.oracle.com/CMN_BULKDATA_IMPORT_ERPApp/CMN_BULKDATA_IMPORT_ERP/CMN_BULKDATA_IMPORT_ERP_BPELPROCESS" xmlns:ns1="http://xmlns.oracle.com/CMN_BULKDATA_IMPORT_ERPApp/CMN_BULKDATA_IMPORT_ERP/CMN_BULKDATA_IMPORT_ERP_BPEL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+<wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://xmlns.oracle.com/CMN_BULKDATA_IMPORT_ERPApp/CMN_BULKDATA_IMPORT_ERP/CMN_BULKDATA_IMPORT_ERP_BPEL" schemaLocation="oramds:/apps/fin/common/xsd/XSD_CMN_BULKDATA_IMPORT_ERP.xsd"/>
+</schema>
+</wsdl:types>
+<wsdl:message name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESSRequestMessage">
+<wsdl:part name="payload" element="ns1:ImportLoadRequest"/>
+</wsdl:message>
+<wsdl:message name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESSResponseMessage">
+<wsdl:part name="payload" element="ns1:ImportLoadResponse"/>
+</wsdl:message>
+<wsdl:portType name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESS">
+<wsdl:operation name="ImportLoadRequest">
+<wsdl:input message="client:CMN_BULKDATA_IMPORT_ERP_BPELPROCESSRequestMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESSCallback">
+<wsdl:operation name="ImportLoadResponse">
+<wsdl:input message="client:CMN_BULKDATA_IMPORT_ERP_BPELPROCESSResponseMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<plnk:partnerLinkType name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESS">
+<plnk:role name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESSProvider" portType="client:CMN_BULKDATA_IMPORT_ERP_BPELPROCESS"/>
+<plnk:role name="CMN_BULKDATA_IMPORT_ERP_BPELPROCESSRequester" portType="client:CMN_BULKDATA_IMPORT_ERP_BPELPROCESSCallback"/>
+</plnk:partnerLinkType>
+</wsdl:definitions>

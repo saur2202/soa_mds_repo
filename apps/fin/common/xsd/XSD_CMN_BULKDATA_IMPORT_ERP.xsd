@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/CMN_BULKDATA_IMPORT_ERPApp/CMN_BULKDATA_IMPORT_ERP/CMN_BULKDATA_IMPORT_ERP_BPEL" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/CMN_BULKDATA_IMPORT_ERPApp/CMN_BULKDATA_IMPORT_ERP/CMN_BULKDATA_IMPORT_ERP_BPEL">
+<xsd:element name="ImportLoadRequest">
+<xsd:annotation>
+<xsd:documentation>ImportAndLoad FBDI/NON FBDI files request payload</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Metadata" type="MetadataType"/>
+<xsd:element name="JobDetails" type="JobDetailsType"/>
+<xsd:element name="ReconciliationRecord" type="ReconciliationRecordType" minOccurs="0"/>
+<xsd:element name="ExecuteRestService" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="SkipRestService" minOccurs="0" default="YES">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="YES"/>
+<xsd:enumeration value="NO"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Parameters" type="ParameterType" maxOccurs="unbounded"/>
+<xsd:element name="RestRelativeURI" type="xsd:string"/>
+<xsd:element name="AbsoluteEndpointURI" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ExecuteBulkExport" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="SkipBulkExport" minOccurs="0" default="YES">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="YES"/>
+<xsd:enumeration value="NO"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Parameters" type="ParameterType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Notification" type="NotificationType"/>
+<xsd:element name="GenericParameters" type="ParameterType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ImportLoadResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Metadata" type="MetadataType"/>
+<xsd:element name="JobStatus" type="JobStatusType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="MetadataType">
+<xsd:sequence>
+<xsd:element name="ParentProcessId" type="xsd:string"/>
+<xsd:element name="Interface_Id" type="xsd:string"/>
+<xsd:element name="SourceSystemName" type="xsd:string"/>
+<xsd:element name="TargetSystemName" type="xsd:string"/>
+<xsd:element name="ParentProcessStartDateTime" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ParameterType">
+<xsd:sequence>
+<xsd:element name="ParameterName" minOccurs="0" nillable="true" type="xsd:string"/>
+<xsd:element name="ParameterValue" minOccurs="0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ReconciliationRecordType">
+<xsd:sequence>
+<xsd:element name="SourceFileTotalRecords" type="xsd:integer"/>
+<xsd:element name="SourceFileEligibleRecords" type="xsd:integer"/>
+<xsd:element name="ERPFileExpectedRecords" type="xsd:integer"/>
+<xsd:element name="ERPFileAICRejectedRecords" type="xsd:integer"/>
+<xsd:element name="ERPFileActualRecords" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="JobDetailsType">
+<xsd:sequence>
+<xsd:element name="FlowType" minOccurs="1" default="FBDI">
+<xsd:annotation>
+<xsd:documentation>This element will identify the load type is FBDL or Non FBDI</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="FBDI"/>
+<xsd:enumeration value="NONFBDI"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FileDirectory" type="xsd:string"/>
+<xsd:element name="FileName" type="xsd:string"/>
+<xsd:element name="FBDIRequest" type="JobDetailsFBDIType"/>
+<xsd:element name="NONFBDIRequest" type="JobDetailsNONFBDIType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="NotificationType">
+<xsd:sequence>
+<xsd:element name="SkipBulkExport" minOccurs="0" default="YES">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="YES"/>
+<xsd:enumeration value="NO"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="NotifyTo" type="xsd:string" minOccurs="1"/>
+<xsd:element name="Message" type="xsd:string"/>
+<xsd:element name="Template" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="JobStatusType">
+<xsd:sequence>
+<xsd:element name="Status" type="xsd:string"/>
+<xsd:element name="StatusReport" type="xsd:string"/>
+<xsd:element name="JobName" type="xsd:string"/>
+<xsd:element name="JOB_PATH" type="xsd:string"/>
+<xsd:element name="FileName" type="xsd:string"/>
+<xsd:element name="Parameter" type="ParameterType"/>
+<xsd:element name="JobsStatusList" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="JobDetailsFBDIType">
+<xsd:sequence>
+<xsd:element name="JobName" type="xsd:string"/>
+<xsd:element name="Content" type="xsd:base64Binary" minOccurs="0"/>
+<xsd:element name="NotificationCode" type="xsd:integer" minOccurs="0"/>
+<xsd:element name="JobPackageName" type="xsd:string" minOccurs="0"/>
+<xsd:element name="JobDefinitionName" type="xsd:string" minOccurs="0"/>
+<xsd:element name="JobOptions" type="xsd:string" minOccurs="0"/>
+<xsd:element name="JobParameterCommaSeparated" type="xsd:string" minOccurs="0"/>
+<xsd:element name="JobOptionsCommaSeparated" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ERPModuleType" type="xsd:string" minOccurs="0"/>
+<xsd:element name="Parameter" type="ParameterType" minOccurs="0"/>
+<xsd:element name="IgnoreJobsStatusList" type="ParameterType" minOccurs="0"/>
+<xsd:element name="CallbackURL" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="JobDetailsNONFBDIType">
+<xsd:sequence>
+<xsd:element name="JobName" type="xsd:string"/>
+<xsd:element name="Content" type="xsd:base64Binary"/>
+<xsd:element name="ContentType" type="xsd:string"/>
+<xsd:element name="DocumentTitle" type="xsd:string"/>
+<xsd:element name="DocumentAuthor" type="xsd:string"/>
+<xsd:element name="DocumentSecurityGroup" type="xsd:string"/>
+<xsd:element name="DocumentAccount" type="xsd:string"/>
+<xsd:element name="NotificationCode" type="xsd:integer"/>
+<xsd:element name="JobPackageName" type="xsd:string"/>
+<xsd:element name="JobDefinitionName" type="xsd:string"/>
+<xsd:element name="JobOptions" type="xsd:string"/>
+<xsd:element name="JobParameterCommaSeparated" type="xsd:string"/>
+<xsd:element name="JobOptionsCommaSeparated" type="xsd:string"/>
+<xsd:element name="ERPModuleType" type="xsd:string"/>
+<xsd:element name="Parameter" type="ParameterType"/>
+<xsd:element name="IgnoreJobsStatusList" type="ParameterType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

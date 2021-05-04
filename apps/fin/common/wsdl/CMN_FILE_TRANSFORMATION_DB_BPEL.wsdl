@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="CMN_FILE_TRANSFORMATION_DB_BPEL" targetNamespace="http://www.CPLotus.com/common/CMN_FILE_TRANSFORMATION_DB/CMN_FILE_TRANSFORMATION_DB_BPEL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://www.CPLotus.com/common/CMN_FILE_TRANSFORMATION_DB/CMN_FILE_TRANSFORMATION_DB_BPEL" xmlns:ns1="http://www.CPLotus.com/schemas/common/FileTransformation" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns3="http://schemas.oracle.com/bpel/extension">
+<plnk:partnerLinkType name="CMN_FILE_TRANSFORMATION_DB_BPEL">
+<plnk:role name="CMN_FILE_TRANSFORMATION_DB_BPELProvider" portType="client:CMN_FILE_TRANSFORMATION_DB_BPEL"/>
+<plnk:role name="CMN_FILE_TRANSFORMATION_DB_BPELRequester" portType="client:CMN_FILE_TRANSFORMATION_DB_BPELCallback"/>
+</plnk:partnerLinkType>
+<wsdl:import namespace="http://schemas.oracle.com/bpel/extension" location="oramds:/soa/shared/bpel/RuntimeFault.wsdl"/>
+<wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://www.CPLotus.com/schemas/common/FileTransformation" schemaLocation="oramds:/apps/fin/common/xsd/XSD_CMN_FILELOADER_REQUEST.xsd"/>
+</schema>
+</wsdl:types>
+<wsdl:message name="CMN_FILE_TRANSFORMATION_DB_BPELRequestMessage">
+<wsdl:part name="payload" element="ns1:FileTransformationRequest"/>
+</wsdl:message>
+<wsdl:message name="CMN_FILE_TRANSFORMATION_DB_BPELResponseMessage">
+<wsdl:part name="payload" element="ns1:FileTransformationResponse"/>
+</wsdl:message>
+<wsdl:portType name="CMN_FILE_TRANSFORMATION_DB_BPEL">
+<wsdl:operation name="process">
+<wsdl:input message="client:CMN_FILE_TRANSFORMATION_DB_BPELRequestMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="CMN_FILE_TRANSFORMATION_DB_BPELCallback">
+<wsdl:operation name="processResponse">
+<wsdl:input message="client:CMN_FILE_TRANSFORMATION_DB_BPELResponseMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+</wsdl:definitions>

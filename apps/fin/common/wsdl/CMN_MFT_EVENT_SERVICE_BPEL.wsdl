@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="CMN_MFT_EVENT_SERVICE_BPEL" targetNamespace="http://www.CPLotus.com/common/CMN_MFT_EVENT_SERVICE/CMN_MFT_EVENT_SERVICE_BPEL" xmlns:tns="http://www.CPLotus.com/common/CMN_MFT_EVENT_SERVICE/CMN_MFT_EVENT_SERVICE_BPEL" xmlns:inp1="http://www.CPLotus.com/schemas/common/mftevent" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:import namespace="http://www.CPLotus.com/schemas/common/mftevent" schemaLocation="oramds:/apps/fin/common/xsd/XSD_MFT_EVENT_SERVICE.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="requestMessage">
+<wsdl:part name="part" element="inp1:MftEventServiceRequest"/>
+</wsdl:message>
+<wsdl:message name="callbackMessage">
+<wsdl:part name="part" element="inp1:MftEventServiceRespone"/>
+</wsdl:message>
+<wsdl:portType name="submitMftEvent_ptt">
+<wsdl:operation name="submitMftEvent">
+<wsdl:input message="tns:requestMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="submitMftEventCallback_ptt">
+<wsdl:operation name="submitMftEventCallback">
+<wsdl:input message="tns:callbackMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+</wsdl:definitions>
