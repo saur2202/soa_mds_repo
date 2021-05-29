@@ -68,6 +68,7 @@ pipeline {
                 // Deploy mds jar
                 echo 'INFO: Running wlst to deploy MDS jar'
                 sh """#!/bin/bash
+				sh sudo su oracle
                 ${env.WLST_HOME}/wlst.sh deployMDS.py -fromLocation mds_${env.BUILD_ID}.jar"""
             }
         }
