@@ -72,5 +72,14 @@ pipeline {
                 ${env.WLST_HOME}/wlst.sh deployMDS.py -fromLocation mds_${env.BUILD_ID}.jar"""
             }
         }
+		
+		post {
+			always {
+				emailext attachLog:true, body: 'Check console output at $BUILD_URL to view the results of MDS deployment',
+                to: 'saurabhleeds@gmail.com',
+                subject: 'MDS Deployment Status : $PROJECT_NAME - #$BUILD_NUMBER',
+                from: 'jenkins.test@test.com'
+        }
+    }
     }
 }
