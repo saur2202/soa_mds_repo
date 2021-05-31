@@ -68,10 +68,20 @@ pipeline {
                 // Deploy mds jar
                 echo 'INFO: Running wlst to deploy MDS jar'
                 sh """#!/bin/bash
-				sh sudo su oracle
-                ${env.WLST_HOME}/wlst.sh deployMDS.py -fromLocation mds_${env.BUILD_ID}.jar"""
+				${env.WLST_HOME}/wlst.sh deployMDS.py -fromLocation mds_${env.BUILD_ID}.jar"""
             }
         }	
+		
+		stage('get_commit_details') {
+        steps {
+            script {
+                env.GIT_COMMIT_MSG = sh (script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
+                env.GIT_AUTHOR = sh (script: 'git log -1 --pretty=%cn ${GIT_COMMIT}', returnStdout: true).trim()
+				echo "Git MSG: ${env.GIT_COMMIT_MSG}"
+				echo "Git Author: ${env.GIT_AUTHOR}"
+            }
+        }
+    }
 		
     }
 	
