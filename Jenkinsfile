@@ -42,7 +42,7 @@ pipeline {
             }
             steps { 
                 // Load environment variables
-                echo 'INFO: Loading environment variables'
+                echo '1....INFO: Loading environment variables'
                 load "${env.BRANCH_NAME}.env"
 
                 // UnDeploy mds 
