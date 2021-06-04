@@ -13,11 +13,11 @@ pipeline {
 
     stages {
 
-        stage('Source') { 
+      /*  stage('Source') { 
             steps { //Get source code from Git  
                 checkout scm
             }
-        }
+        }*/
 
         stage('Compile') {
             when {
